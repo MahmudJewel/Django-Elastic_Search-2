@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Cars
+from .models import Comments
 # Register your models here.
 
-admin.site.register(Cars)
+admin.site.register(Comments)

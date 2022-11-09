@@ -39,7 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     # installed apps 
-    'car_info',
+    'comment',
 
     # third party apps 
     'django_elasticsearch_dsl',

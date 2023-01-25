@@ -11,9 +11,8 @@ def home(request):
     # return HttpResponse('THis is home page!!!')
     return render(request, 'home.html')
 
+
 # Generating demo comments
-
-
 def geenerate_data(request):
     url = 'https://jsonplaceholder.typicode.com/comments'
     r = requests.get(url)
@@ -34,12 +33,12 @@ def geenerate_data(request):
     text = 'Total generated data => ' + str(count)
     return HttpResponse(text)
 
-
+# search using elastic 
 def search_elastic(request):
     template_name = 'search.html'
     qr = request.GET.get('name')
     print('Hello ======> ', qr)
-    all_comments = CommentDocument.search().query('match', name=qr)
+    all_comments = CommentDocument.search().query('match', name=qr )
     total_comments = all_comments.count()
     # print('all cars ====> ', all_cars)
     # all_cars = Cars.objects.all()

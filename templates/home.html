@@ -2,6 +2,10 @@
 {% extends 'base.html' %}
 {% block content %}
 <div class="row">
+    <br><br>
+    <h2 class="text-center text-success">Elastic Search</h2>
+    <br><br><br>
+    <p class="text-muted">Total objects => <span style="color: green;">{{total_comments}}</span></p>
     {% for comment in all_comments %}
     <div class="card me-2 mb-2" style="width: 18rem;">
         <div class="card-body">
@@ -12,6 +16,6 @@
         </div>
     </div>
     {% endfor %}
-    <p class="text-muted">Total objects => <span style="color: green;">{{total_comments}}</span></p>
+    
 </div>
 {% endblock %}

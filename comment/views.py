@@ -8,8 +8,20 @@ from .models import Comments
 
 
 def home(request):
+    template_name = 'home.html'
+    qr = request.GET.get('name')
+    print('Hello ======> ', qr)
+    all_comments = Comments.objects.all()
+    total_comments = all_comments.count()
+    # print('all cars ====> ', all_cars)
+    # all_cars = Cars.objects.all()
+    context = {
+        'all_comments': all_comments,
+        'total_comments': total_comments,
+    }
+    return render(request, template_name, context)
     # return HttpResponse('THis is home page!!!')
-    return render(request, 'home.html')
+    # return render(request, 'home.html')
 
 
 # Generating demo comments

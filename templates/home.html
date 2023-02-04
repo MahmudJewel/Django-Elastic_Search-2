@@ -1,6 +1,17 @@
+
 {% extends 'base.html' %}
 {% block content %}
-    <div class="container">
-        <h3 class="text-center">Welcome to Elastic search</h3>
+<div class="row">
+    {% for comment in all_comments %}
+    <div class="card me-2 mb-2" style="width: 18rem;">
+        <div class="card-body">
+            <h5 class="card-title">{{comment.name}}</h5>
+            <h6 class="card-subtitle mb-2 text-muted">{{comment.email}}</h6>
+            <p class="card-text">{{comment.body}}.</p>
+            <a href="" class="card-link">Card link</a>
+        </div>
     </div>
+    {% endfor %}
+    <p class="text-muted">Total objects => <span style="color: green;">{{total_comments}}</span></p>
+</div>
 {% endblock %}

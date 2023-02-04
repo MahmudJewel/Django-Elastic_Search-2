@@ -57,10 +57,10 @@
                         <a class="btn textColor" aria-current="page" href="/product/create/">Add Product</a>
                     </li>
                 </ul>
-                <form class="d-flex" method="post" action="/">
-                    {% csrf_token %}
+                <form class="d-flex" method="GET" action="{% url 'search' %}" >
+                    
                     <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"
-                        name="search" value="{{search}}" />
+                        name="name" value="{{request.GET.name}}" />
                     <button class="btn btn-primary" type="submit">Search</button>
                 </form>
             </div>

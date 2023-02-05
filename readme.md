@@ -24,8 +24,10 @@ Shows products according to text searches.
 
 ![search](https://github.com/MahmudJewel/Django-Elastic_Search-2/blob/main/screenshot/2-search.png)
 
+search page-2
 ![search](https://github.com/MahmudJewel/Django-Elastic_Search-2/blob/main/screenshot/3-search.png)
 
+search page-3
 ![search](https://github.com/MahmudJewel/Django-Elastic_Search-2/blob/main/screenshot/4-search.png)
 
 The End

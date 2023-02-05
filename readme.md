@@ -14,7 +14,6 @@ This web app is developed by : [Jewel Mahmud](https://mahmudjewel.herokuapp.com/
 	elasticsearch==7.17.7
 	elasticsearch-dsl==7.4.0
 	
-```
 
 ## Home Page
 Home page shows all products.

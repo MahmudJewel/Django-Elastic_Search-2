@@ -50,7 +50,8 @@ def search_elastic(request):
     template_name = 'home.html'
     qr = request.GET.get('name')
     print('Hello ======> ', qr)
-    # all_comments = CommentDocument.search().extra(size=100).query('match', name=qr )
+    # default elasticsearch_dsl shows 10 results
+    # all_comments = CommentDocument.search().extra(size=500).query('match', name=qr )
     all_comments = CommentDocument.search().extra(size=500).query("multi_match", query=qr, fields=["name", "email", "body"]).to_queryset()
     total_comments = all_comments.count()
     # print('all cars ====> ', all_cars)

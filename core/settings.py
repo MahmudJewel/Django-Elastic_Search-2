@@ -49,7 +49,7 @@ INSTALLED_APPS = [
 ELASTICSEARCH_DSL={
     'default': {
         'hosts': 'localhost:9200',
-        'http_auth': ('elastic', 's1A9oKqjE61lQgI5Alyn'),
+        'http_auth': ('elastic', 's1A9oKqjE61lQgI5Alyn'), # if auth requires
     },
 }
 

@@ -49,15 +49,16 @@ def geenerate_data(request):
 def search_elastic(request):
     template_name = 'home.html'
     qr = request.GET.get('name')
-    print('Hello ======> ', qr)
+    # print('Hello ======> ', qr)
     # default elasticsearch_dsl shows 10 results
-    # all_comments = CommentDocument.search().extra(size=500).query('match', name=qr )
+    # all_comments = CommentDocument.search().extra(size=500).query('match', name=qr ) # for single field search
+    # for multiple field search
     all_comments = CommentDocument.search().extra(size=500).query("multi_match", query=qr, fields=["name", "email", "body"]).to_queryset()
     total_comments = all_comments.count()
     # print('all cars ====> ', all_cars)
     # all_cars = Cars.objects.all()
-    for comment in all_comments:
-        print('=======> single comments=> ', comment.name)
+    # for comment in all_comments:
+    #     print('=======> single comments=> ', comment.name)
     context = {
         'all_comments': all_comments,
         'total_comments': total_comments,
